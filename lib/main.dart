@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:cloneui/screens/instagram.dart';
+import 'package:cloneui/screens/whatsapp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 Map<String, WidgetBuilder> appRoute = {
+  '/whatsapp': (BuildContext context) => WhatsappScreen(),
   '/instagram': (BuildContext context) => InstagramScreen(),
 };
 
@@ -37,7 +39,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _myCustomElevatedButton(title: 'Whatsapp Clone', assetName: 'assets/icon/whatsapp.png'),
+              _myCustomElevatedButton(title: 'Whatsapp Clone', assetName: 'assets/icon/whatsapp.png', onPressed: () => Navigator.pushNamed(context, '/whatsapp')),
               _myCustomElevatedButton(title: 'Instagram Clone', assetName: 'assets/icon/instagram.png', onPressed: () => Navigator.pushNamed(context, '/instagram')),
             ],
           ),
